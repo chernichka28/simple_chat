@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instatalk</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 my-5">
+      <div class="card-body">
+        <h3>Online:</h3>  
+        <div id="users-online">
+          <%= render User.last(20) %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card text-center mt-4 mb-4">
+        <div class="card-body">
+          Welcome to Instatalk, <b><%= current_user.nickname %></b>!
+        </div>
+      </div>
+
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

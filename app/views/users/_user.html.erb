@@ -1,0 +1,10 @@
+<% if user.status %>
+  <p id="user_<%= user.id %>">
+    <i class="icon-ok"><%= "#{user.nickname} online" %></i>
+  </p>
+<% else %>
+  <div id="user_<%= user.id %>">
+    <%= "#{user.nickname} online" %>
+    <i class="icon-remove-sign"></i>
+  </div>
+<% end %>
