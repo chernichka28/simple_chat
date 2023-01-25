@@ -10,8 +10,7 @@ jQuery(document).on 'turbolinks:load', ->
     
   received: (data) ->
     if document.getElementById("user_" + data['user_id'])
-      document.getElementById("user_" + data['user_id']).remove()
-      $('#users-online').append data['user']
+      document.getElementById("user_" + data['user_id']).outerHTML = data['user']
     else
       # Called when there's incoming data on the websocket for this channel
       console.log('Received message: ' + data['user'])

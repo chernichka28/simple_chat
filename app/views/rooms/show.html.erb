@@ -1,6 +1,6 @@
 <h1>Room <%= @room.id %></h1>
 
-<%= link_to "Leave", root_path %>
+<%= button_to "Leave", root_path, data: {turbo: false}, method: :get, class: "btn btn-primary" %>
 
 <p id="notice"><%= notice %></p>
 

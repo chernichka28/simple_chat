@@ -1,10 +1,15 @@
 <% if user.status %>
-  <p id="user_<%= user.id %>">
-    <i class="icon-ok"><%= "#{user.nickname} online" %></i>
-  </p>
+  <div class="row text-success" id="user_<%= user.id %>">
+    <p class="col-lg-7 col-md-8 col-sm-4">
+      <%= "#{user.nickname}" %>  
+    </p>
+    <i class="col-1 py-1 icon-ok"></i>
+  </div>
 <% else %>
-  <div id="user_<%= user.id %>">
-    <%= "#{user.nickname} online" %>
-    <i class="icon-remove-sign"></i>
+  <div class="row text-danger" id="user_<%= user.id %>">
+    <p class="col-lg-7 col-md-8 col-sm-4">
+      <%= "#{user.nickname}" %>  
+    </p>
+    <i class="col-1 py-1 icon-remove-sign"></i>
   </div>
 <% end %>
