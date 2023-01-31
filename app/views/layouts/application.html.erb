@@ -18,7 +18,7 @@
       <div class="card-body">
         <h3>Online:</h3>  
         <div id="users-online">
-          <%= render User.all %>
+          <%= render User.where(status: true) %>
         </div>
       </div>
     </div>
