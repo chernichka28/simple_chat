@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  before_action :set_online_users
+
   private
 
   def current_user
@@ -14,5 +16,9 @@ class ApplicationController < ActionController::Base
     end
 
     @current_user
+  end
+
+  def set_online_users
+    @online_users = User.where(status: true)
   end
 end
